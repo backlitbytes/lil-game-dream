@@ -19,9 +19,9 @@ const createCartStore = () => {
 		{ hue: 120, sat: 100, scene: 'Green', selected: false, unlocked: false },
 		{ hue: 240, sat: 60, scene: 'Blue', selected: false, unlocked: false },
 		{ hue: 270, sat: 100, scene: 'Purple', selected: false, unlocked: false },
-		{ hue: 0, sat: 0, scene: 'Black', selected: false, unlocked: true },
-		{ hue: 0, sat: 0, scene: 'White', selected: false, unlocked: true },
-		{ hue: 0, sat: 100, scene: 'RainbowForrest', selected: false, unlocked: true },
+		{ hue: 0, sat: 0, scene: 'Black', selected: false, unlocked: false },
+		{ hue: 0, sat: 0, scene: 'White', selected: false, unlocked: false },
+		{ hue: 0, sat: 100, scene: 'RainbowForrest', selected: false, unlocked: false },
 		{ hue: 0, sat: 100, scene: 'RainbowVillage', selected: false, unlocked: false },
 		{ hue: 0, sat: 100, scene: 'RainbowOcean', selected: false, unlocked: false }
 	]);

@@ -34,15 +34,6 @@
 	});
 </script>
 
-<!-- IDEAS:
-	- punch it all up
-	- unlocked carts in local storage
-	- sound effects
-
- - metadata
- - put this all in it's own repo
--->
-
 <div class="gameboy-outer" bind:this={gameboy}>
 	<div class="gameboy">
 		<div class="shine-gameboy" />

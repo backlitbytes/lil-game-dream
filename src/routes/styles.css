@@ -7,8 +7,13 @@ body {
 	min-height: 100vh;
 	margin: 0;
 	background-attachment: fixed;
+	touch-action: manipulation; /** prevent double tap zoom */
 }
 
 div {
 	box-sizing: border-box;
+}
+
+.disable-select {
+	user-select: none;
 }

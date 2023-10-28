@@ -10,7 +10,7 @@
 	const funColors = ['red', 'rgb(176, 81, 176)', 'rgb(26, 154, 26)', 'yellow', 'rgb(214, 30, 219)'];
 </script>
 
-<div class="wrapper">
+<div class="wrapper disable-select">
 	<span class="grey"><span>lil</span><span>game</span></span>
 	<span class="colorful">
 		{#each text as letter, index (index)}

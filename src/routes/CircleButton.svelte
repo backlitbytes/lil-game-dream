@@ -5,6 +5,7 @@
 </script>
 
 <button
+	class="disable-select"
 	class:active={$controlsStore[control]}
 	on:touchstart={(event) => registerInputDown(event, control)}
 	on:mousedown={(event) => registerInputDown(event, control)}><slot /></button

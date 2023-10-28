@@ -3,7 +3,7 @@
 	import { registerInputDown } from './global-inputs';
 </script>
 
-<div class="dpad-wrapper">
+<div class="dpad-wrapper disable-select">
 	<div class="shadow">
 		<div class="right" />
 		<div class="down" />

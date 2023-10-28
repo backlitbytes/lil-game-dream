@@ -3,6 +3,7 @@
 	import { cartStore, type CartData } from './carts-store';
 	import { bumpHue, gameboyElemRef, isOn, updateHue } from './gameboy-store';
 	import { switchScene } from './games/choose';
+	import { startSound } from './sounds';
 
 	export let cart: CartData;
 	export let topPerc: number;
@@ -34,6 +35,8 @@
 						hue: cart.hue,
 						sat: cart.sat
 					});
+
+					startSound.play();
 
 					if (cart.scene.startsWith('Rainbow')) {
 						rainbowID = setInterval(bumpHue, 200);
@@ -77,7 +80,7 @@
 	}
 
 	function startingTransform() {
-		return `scale(0.4) translate(${leftPerc}%, ${topPerc}%)`;
+		return `scale(0.3) translate(${leftPerc}%, ${topPerc}%)`;
 	}
 </script>
 

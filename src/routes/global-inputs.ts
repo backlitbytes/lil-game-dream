@@ -39,7 +39,3 @@ export const handleInputUp = (event: MouseEvent | TouchEvent) => {
 		activeEvents.splice(index, 1);
 	}
 };
-
-// Could move these to a component - once server rendering
-window.addEventListener('mouseup', handleInputUp);
-window.addEventListener('touchend', handleInputUp);

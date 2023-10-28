@@ -2,6 +2,10 @@
 	import Gameboy from './Gameboy.svelte';
 	import AllCarts from './AllCarts.svelte';
 	import { winnerChickenDinner } from './carts-store';
+	import { handleInputUp } from './global-inputs';
+
+	window.addEventListener('mouseup', handleInputUp);
+	window.addEventListener('touchend', handleInputUp);
 </script>
 
 <div class="wrapper" class:winner={$winnerChickenDinner}>
@@ -19,6 +23,7 @@
 		width: 100vw;
 		padding: 80px 0 30px 0;
 		position: relative;
+		transition: transform ease-in-out 20s;
 	}
 
 	@keyframes hue-rotate {
@@ -33,5 +38,6 @@
 	.wrapper.winner {
 		background: green;
 		animation: hue-rotate 5s linear infinite;
+		transform: scale(3);
 	}
 </style>

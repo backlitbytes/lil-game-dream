@@ -23,7 +23,7 @@ export type SceneName =
 	| 'RainbowVillage'
 	| 'RainbowOcean';
 
-const SPEED = 2;
+let SPEED = 1;
 
 class ColoredSquare extends Phaser.GameObjects.Rectangle {
 	public hexColor: number;
@@ -90,16 +90,18 @@ export function switchScene(newSceneKey: SceneName) {
 let square: Phaser.GameObjects.Rectangle;
 
 function controlSquare() {
+	const speed = controlsState.a ? SPEED * 2 : SPEED;
+
 	if (controlsState.ArrowLeft) {
-		square.x -= SPEED;
+		square.x -= speed;
 	} else if (controlsState.ArrowRight) {
-		square.x += SPEED;
+		square.x += speed;
 	}
 
 	if (controlsState.ArrowUp) {
-		square.y -= SPEED;
+		square.y -= speed;
 	} else if (controlsState.ArrowDown) {
-		square.y += SPEED;
+		square.y += speed;
 	}
 }
 

@@ -7,6 +7,7 @@
 	import StartButton from './StartButton.svelte';
 	import { assignGameboyRef, gameboyStore } from './gameboy-store';
 	import { initializeGame } from './games/choose';
+	import { winnerChickenDinner } from './carts-store';
 
 	let gameboy: HTMLDivElement | null = null;
 
@@ -28,10 +29,15 @@
 		}
 	}
 
+	let game: Phaser.Game;
 	onMount(() => {
 		assignGameboyRef(gameboy);
-		initializeGame('game-screen');
+		game = initializeGame('game-screen');
 	});
+
+	$: if ($winnerChickenDinner) {
+		game.destroy(true);
+	}
 </script>
 
 <div class="gameboy-outer" bind:this={gameboy}>
@@ -198,7 +204,7 @@
 
 	.screen-inner {
 		flex-grow: 1;
-		background-color: rgb(145, 139, 140);
+		background: black;
 		border-radius: 2px;
 		box-shadow: inset 4px 4px 4px rgba(31, 31, 31, 0.5);
 	}

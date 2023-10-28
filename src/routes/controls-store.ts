@@ -1,15 +1,8 @@
 import { writable } from 'svelte/store';
 
-export type ValidInput =
-	| 'ArrowRight'
-	| 'ArrowDown'
-	| 'ArrowLeft'
-	| 'ArrowUp'
-	| 'a'
-	| 'b'
-	| 'Escape'
-	| 'Enter'
-	| 'None';
+export type ValidDPad = 'ArrowRight' | 'ArrowDown' | 'ArrowLeft' | 'ArrowUp';
+
+export type ValidInput = ValidDPad | 'a' | 'b' | 'Escape' | 'Enter' | 'None';
 
 const buttons: ValidInput[] = [
 	'ArrowRight',

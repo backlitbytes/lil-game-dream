@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { controlsStore, type ControlState, type ValidInput } from './controls-store';
+	import { controlsStore, type ValidInput } from './controls-store';
+	import { registerInputDown } from './global-inputs';
 	export let control: ValidInput = 'None';
 </script>
 
 <button
 	class:active={$controlsStore[control]}
-	on:mousedown={() => controlsStore.update((state) => ({ ...state, [control]: true }))}
-	on:mouseup={() => controlsStore.update((state) => ({ ...state, [control]: false }))}
-	><slot /></button
+	on:touchstart={(event) => registerInputDown(event, control)}
+	on:mousedown={(event) => registerInputDown(event, control)}><slot /></button
 >
 
 <style>
@@ -19,7 +19,6 @@
 		border: none;
 		position: relative;
 		cursor: pointer;
-		transition: box-shadow 0.05s linear, transform 0.05s linear;
 		outline: none;
 		color: rgba(161, 161, 190, 0.36);
 		box-shadow: 0 2px 0 rgba(44, 44, 57, 0.8);

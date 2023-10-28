@@ -1,23 +1,15 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { controlsStore, type ControlState, type ValidInput } from './controls-store';
+	import { controlsStore, type ValidInput } from './controls-store';
+	import { registerInputDown } from './global-inputs';
 
 	export let control: ValidInput = 'None';
-
-	let controlsState: ControlState = {};
-
-	onMount(() => {
-		controlsStore.subscribe((state) => {
-			controlsState = state;
-		});
-	});
 </script>
 
 <div class="center">
 	<button
-		class:active={controlsState[control]}
-		on:mousedown={() => controlsStore.update((state) => ({ ...state, [control]: true }))}
-		on:mouseup={() => controlsStore.update((state) => ({ ...state, [control]: false }))}
+		class:active={$controlsStore[control]}
+		on:touchstart={(event) => registerInputDown(event, control)}
+		on:mousedown={(event) => registerInputDown(event, control)}
 	/>
 	<div class="word">
 		<slot />

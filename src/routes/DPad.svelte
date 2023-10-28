@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { controlsStore, type ControlState } from './controls-store';
+	import { controlsStore } from './controls-store';
+	import { registerInputDown } from './global-inputs';
 </script>
 
 <div class="dpad-wrapper">
@@ -14,26 +15,26 @@
 		<button
 			class="up"
 			class:active={$controlsStore.ArrowUp}
-			on:mousedown={() => controlsStore.update((state) => ({ ...state, ArrowUp: true }))}
-			on:mouseup={() => controlsStore.update((state) => ({ ...state, ArrowUp: false }))}
+			on:touchstart={(event) => registerInputDown(event, 'ArrowUp')}
+			on:mousedown={(event) => registerInputDown(event, 'ArrowUp')}
 		/>
 		<button
 			class="right"
 			class:active={$controlsStore.ArrowRight}
-			on:mousedown={() => controlsStore.update((state) => ({ ...state, ArrowRight: true }))}
-			on:mouseup={() => controlsStore.update((state) => ({ ...state, ArrowRight: false }))}
+			on:touchstart={(event) => registerInputDown(event, 'ArrowRight')}
+			on:mousedown={(event) => registerInputDown(event, 'ArrowRight')}
 		/>
 		<button
 			class="down"
 			class:active={$controlsStore.ArrowDown}
-			on:mousedown={() => controlsStore.update((state) => ({ ...state, ArrowDown: true }))}
-			on:mouseup={() => controlsStore.update((state) => ({ ...state, ArrowDown: false }))}
+			on:touchstart={(event) => registerInputDown(event, 'ArrowDown')}
+			on:mousedown={(event) => registerInputDown(event, 'ArrowDown')}
 		/>
 		<button
 			class="left"
 			class:active={$controlsStore.ArrowLeft}
-			on:mousedown={() => controlsStore.update((state) => ({ ...state, ArrowLeft: true }))}
-			on:mouseup={() => controlsStore.update((state) => ({ ...state, ArrowLeft: false }))}
+			on:touchstart={(event) => registerInputDown(event, 'ArrowLeft')}
+			on:mousedown={(event) => registerInputDown(event, 'ArrowLeft')}
 		/>
 	</div>
 </div>

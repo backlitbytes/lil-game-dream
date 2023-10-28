@@ -2,6 +2,7 @@ Can you find all the games that let you find all the games?
 
 Future things:
 
+- touch should probably work by entering the button area and leaving the button area - which may be a big PITA
 - performance issue all of the sudden!
 - buttons releasing isn't working right with multiple presses
 - move the carts... maybe to the bottom of the screen

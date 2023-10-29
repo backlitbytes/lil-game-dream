@@ -11,7 +11,7 @@ export const registerInputDown = (event: MouseEvent | TouchEvent, control: strin
 	let id: number | string;
 
 	if (event instanceof TouchEvent) {
-		console.log('down', event.touches);
+		console.log('down', event.touches, activeEvents);
 		id = event.touches[0].identifier;
 	} else {
 		id = 'mouse'; // For mouse events, use a constant identifier
@@ -26,7 +26,7 @@ export const handleInputUp = (event: MouseEvent | TouchEvent) => {
 	let id: number | string;
 
 	if (event instanceof TouchEvent && event.changedTouches.length > 0) {
-		console.log('up', event.changedTouches);
+		console.log('up', event.changedTouches, activeEvents);
 		id = event.changedTouches[0].identifier;
 	} else {
 		id = 'mouse';

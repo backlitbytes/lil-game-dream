@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import MoveableCart from './MoveableCart.svelte';
-	import { cartStore } from './carts-store';
+	import { cartStore } from '../stores/carts';
 	import { onMount } from 'svelte';
 
 	let mounted = false;

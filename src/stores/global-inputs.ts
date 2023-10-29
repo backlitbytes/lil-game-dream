@@ -1,4 +1,4 @@
-import { controlsStore } from './controls-store';
+import { controlsStore } from './controls';
 
 type InputEvent = {
 	id: number | string;

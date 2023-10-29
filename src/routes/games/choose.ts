@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
-import { controlsStore, type ControlState } from '../controls-store';
+import { controlsStore, type ControlState } from '../../stores/controls';
 import { colorHex } from './color-utils';
-import { cartStore } from '../carts-store';
+import { cartStore } from '../../stores/carts';
 
 let controlsState: Partial<ControlState> = {};
 controlsStore.subscribe((state) => {

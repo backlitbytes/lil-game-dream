@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
-import type { SceneName } from './games/choose';
-import { foundOne } from './sounds';
+import type { SceneName } from '../routes/games/choose';
+import { foundOne } from '../routes/sounds';
 
 export interface CartData {
 	hue: number;

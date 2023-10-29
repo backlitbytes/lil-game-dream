@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import BrandText from './BrandText.svelte';
 	import CartDetail from './CartDetail.svelte';
-	import type { CartData } from './carts-store';
+	import type { CartData } from '../stores/carts';
 
 	export let cartData: CartData;
 	export let onClick: any; //TODO: feel shame

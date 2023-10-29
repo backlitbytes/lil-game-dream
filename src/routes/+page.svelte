@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Gameboy from './Gameboy.svelte';
 	import AllCarts from './AllCarts.svelte';
-	import { winnerChickenDinner } from './carts-store';
-	import { handleInputUp } from './global-inputs';
+	import { winnerChickenDinner } from '../stores/carts';
+	import { handleInputUp } from '../stores/global-inputs';
 	import { onMount } from 'svelte';
 	import { loadAudio } from './sounds';
 

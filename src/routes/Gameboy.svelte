@@ -5,8 +5,8 @@
 	import DPad from './DPad.svelte';
 	import PowerLight from './PowerLight.svelte';
 	import StartButton from './StartButton.svelte';
-	import { assignGameboyRef, gameboyStore } from './gameboy-store';
-	import { winnerChickenDinner } from './carts-store';
+	import { assignGameboyRef, gameboyStore } from '../stores/gameboy';
+	import { winnerChickenDinner } from '../stores/carts';
 
 	let gameboy: HTMLDivElement | null = null;
 

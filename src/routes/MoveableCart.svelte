@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Cartridge from './Cartridge.svelte';
-	import { cartStore, type CartData } from './carts-store';
-	import { bumpHue, gameboyElemRef, isOn, updateHue } from './gameboy-store';
+	import { cartStore, type CartData } from '../stores/carts';
+	import { bumpHue, gameboyElemRef, isOn, updateHue } from '../stores/gameboy';
 	import type { SceneName } from './games/choose';
 	import { startSound } from './sounds';
 

@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Cartridge from './Cartridge.svelte';
-	import { cartStore, type CartData } from '../stores/carts';
-	import { bumpHue, gameboyElemRef, isOn, updateHue } from '../stores/gameboy';
-	import type { SceneName } from './games/choose';
-	import { startSound } from './sounds';
+	import { startSound } from '../../audio/sounds';
+	import { type CartData, cartStore } from '../../stores/carts';
+	import { isOn, updateHue, bumpHue, gamedreamElemRef } from '../../stores/gamedream';
+	import type { SceneName } from '../../games';
 
 	export let cart: CartData;
 	export let topPerc: number;
@@ -20,7 +20,7 @@
 
 	let switchScene: (newSceneKey: SceneName) => void;
 	onMount(async () => {
-		switchScene = (await import('./games/choose')).switchScene;
+		switchScene = (await import('../../games')).switchScene;
 	});
 
 	function onSelected(isSelected: boolean) {
@@ -74,7 +74,7 @@
 	const xOffset = 60;
 
 	function gameBox() {
-		return gameboyElemRef?.getBoundingClientRect()!; // TODO, don't bang
+		return gamedreamElemRef?.getBoundingClientRect()!; // TODO, don't bang
 	}
 
 	function selectedTransform() {

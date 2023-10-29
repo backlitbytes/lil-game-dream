@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { controlsStore, type ValidInput } from '../stores/controls';
-	import { registerInputDown } from '../stores/global-inputs';
+	import { type ValidInput, controlsStore } from '../../stores/controls';
+	import { registerInputDown } from '../../stores/global-inputs';
 
 	export let control: ValidInput = 'None';
 </script>

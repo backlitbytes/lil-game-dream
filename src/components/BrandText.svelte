@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { winnerChickenDinner } from '../stores/carts';
+	import { winnerChickenDinner } from '../stores/winner';
 
 	let text = 'DREAM';
 

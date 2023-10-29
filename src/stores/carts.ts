@@ -1,6 +1,7 @@
 import { writable } from 'svelte/store';
-import type { SceneName } from '../routes/games/choose';
-import { foundOne } from '../routes/sounds';
+import type { SceneName } from '../games';
+import { foundOne } from '../audio/sounds';
+import { winnerChickenDinner } from './winner';
 
 export interface CartData {
 	hue: number;
@@ -9,8 +10,6 @@ export interface CartData {
 	selected: boolean;
 	unlocked: boolean;
 }
-
-export const winnerChickenDinner = writable(false);
 
 const createCartStore = () => {
 	const { subscribe, update } = writable<Array<CartData>>([

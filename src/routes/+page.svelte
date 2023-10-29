@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Gameboy from './Gameboy.svelte';
-	import AllCarts from './AllCarts.svelte';
-	import { winnerChickenDinner } from '../stores/carts';
+	import AllCarts from '../components/carts/AllCarts.svelte';
 	import { handleInputUp } from '../stores/global-inputs';
 	import { onMount } from 'svelte';
-	import { loadAudio } from './sounds';
+	import { loadAudio } from '../audio/sounds';
+	import { winnerChickenDinner } from '../stores/winner';
+	import Gamedream from '../components/gamedream/Gamedream.svelte';
 
 	onMount(() => {
 		loadAudio();
@@ -15,7 +15,7 @@
 
 <div class="wrapper" class:winner={$winnerChickenDinner}>
 	<AllCarts />
-	<Gameboy><div id="game-screen" /></Gameboy>
+	<Gamedream><div id="game-screen" /></Gamedream>
 </div>
 
 <style>

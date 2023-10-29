@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import BrandText from './BrandText.svelte';
+	import BrandText from '../BrandText.svelte';
 	import CartDetail from './CartDetail.svelte';
-	import type { CartData } from '../stores/carts';
+	import type { CartData } from '../../stores/carts';
 
 	export let cartData: CartData;
 	export let onClick: any; //TODO: feel shame

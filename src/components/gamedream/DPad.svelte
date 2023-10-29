@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { controlsStore } from '../stores/controls';
-	import { registerInputDown } from '../stores/global-inputs';
+	import { controlsStore } from '../../stores/controls';
+	import { registerInputDown } from '../../stores/global-inputs';
 </script>
 
 <div class="dpad-wrapper disable-select">

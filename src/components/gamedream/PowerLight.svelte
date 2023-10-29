@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { isOn } from '../stores/gameboy';
+	import { isOn } from '../../stores/gamedream';
 </script>
 
 <div class="wrapper">

@@ -1,17 +1,17 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import BrandText from './BrandText.svelte';
 	import CircleButton from './CircleButton.svelte';
 	import DPad from './DPad.svelte';
 	import PowerLight from './PowerLight.svelte';
 	import StartButton from './StartButton.svelte';
-	import { assignGameboyRef, gameboyStore } from '../stores/gameboy';
-	import { winnerChickenDinner } from '../stores/carts';
+	import { gamedreamStore, assignGamedreamRef } from '../../stores/gamedream';
+	import { winnerChickenDinner } from '../../stores/winner';
+	import BrandText from '../BrandText.svelte';
 
-	let gameboy: HTMLDivElement | null = null;
+	let gamedream: HTMLDivElement | null = null;
 
-	gameboyStore.subscribe((state) => {
-		updateColor(gameboy, { hue: state.hue, sat: state.sat });
+	gamedreamStore.subscribe((state) => {
+		updateColor(gamedream, { hue: state.hue, sat: state.sat });
 	});
 
 	function updateColor(elem: HTMLDivElement | null, args: { hue?: number; sat?: number }) {
@@ -30,8 +30,8 @@
 
 	let game: Phaser.Game;
 	onMount(async () => {
-		assignGameboyRef(gameboy);
-		game = (await import('./games/choose')).initializeGame('game-screen');
+		assignGamedreamRef(gamedream);
+		game = (await import('../../games')).initializeGame('game-screen');
 	});
 
 	$: if ($winnerChickenDinner) {
@@ -39,11 +39,11 @@
 	}
 </script>
 
-<div class="gameboy-outer" bind:this={gameboy}>
-	<div class="gameboy">
-		<div class="shine-gameboy" />
-		<div class="gameboy-darken-middle" />
-		<div class="gameboy-shine-middle" />
+<div class="gamedream-outer" bind:this={gamedream}>
+	<div class="gamedream">
+		<div class="shine-gamedream" />
+		<div class="gamedream-darken-middle" />
+		<div class="gamedream-shine-middle" />
 		<div class="screen-outer">
 			<PowerLight />
 			<BrandText />
@@ -68,7 +68,7 @@
 </div>
 
 <style>
-	.gameboy-outer {
+	.gamedream-outer {
 		--hue: 195;
 		--sat: 0%;
 
@@ -83,7 +83,7 @@
 		z-index: 2;
 	}
 
-	.gameboy {
+	.gamedream {
 		margin-top: -16px;
 		width: 100%;
 		height: 100%;
@@ -98,7 +98,7 @@
 		overflow: hidden;
 	}
 
-	.shine-gameboy {
+	.shine-gamedream {
 		position: absolute;
 		border-top-left-radius: 7px;
 		border-top-right-radius: 7px;
@@ -132,7 +132,7 @@
 		font-family: monospace;
 	}
 
-	.gameboy-darken-middle {
+	.gamedream-darken-middle {
 		top: 45%;
 		left: 15%;
 		width: 70%;
@@ -151,7 +151,7 @@
 		pointer-events: none;
 	}
 
-	.gameboy-shine-middle {
+	.gamedream-shine-middle {
 		top: 0;
 		left: 0;
 		right: 0;

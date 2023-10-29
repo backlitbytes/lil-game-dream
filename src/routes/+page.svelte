@@ -3,9 +3,14 @@
 	import AllCarts from './AllCarts.svelte';
 	import { winnerChickenDinner } from './carts-store';
 	import { handleInputUp } from './global-inputs';
+	import { onMount } from 'svelte';
+	import { loadAudio } from './sounds';
 
-	window.addEventListener('mouseup', handleInputUp);
-	window.addEventListener('touchend', handleInputUp);
+	onMount(() => {
+		loadAudio();
+		window.addEventListener('mouseup', handleInputUp);
+		window.addEventListener('touchend', handleInputUp);
+	});
 </script>
 
 <div class="wrapper" class:winner={$winnerChickenDinner}>

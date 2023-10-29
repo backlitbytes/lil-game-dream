@@ -6,7 +6,6 @@
 	import PowerLight from './PowerLight.svelte';
 	import StartButton from './StartButton.svelte';
 	import { assignGameboyRef, gameboyStore } from './gameboy-store';
-	import { initializeGame } from './games/choose';
 	import { winnerChickenDinner } from './carts-store';
 
 	let gameboy: HTMLDivElement | null = null;
@@ -30,9 +29,9 @@
 	}
 
 	let game: Phaser.Game;
-	onMount(() => {
+	onMount(async () => {
 		assignGameboyRef(gameboy);
-		game = initializeGame('game-screen');
+		game = (await import('./games/choose')).initializeGame('game-screen');
 	});
 
 	$: if ($winnerChickenDinner) {

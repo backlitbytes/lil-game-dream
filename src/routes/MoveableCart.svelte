@@ -1,8 +1,9 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import Cartridge from './Cartridge.svelte';
 	import { cartStore, type CartData } from './carts-store';
 	import { bumpHue, gameboyElemRef, isOn, updateHue } from './gameboy-store';
-	import { switchScene } from './games/choose';
+	import type { SceneName } from './games/choose';
 	import { startSound } from './sounds';
 
 	export let cart: CartData;
@@ -16,6 +17,11 @@
 	let animationID: any = 0; // TODO: these id types...
 	let sceneSwapID: any = 0;
 	let rainbowID: any = 0;
+
+	let switchScene: (newSceneKey: SceneName) => void;
+	onMount(async () => {
+		switchScene = (await import('./games/choose')).switchScene;
+	});
 
 	function onSelected(isSelected: boolean) {
 		clearTimeout(animationID);

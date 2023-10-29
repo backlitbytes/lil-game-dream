@@ -23,17 +23,19 @@ const createControlsStore = () => {
 		update((n) => ({ ...n, [button]: false }));
 	});
 
-	window.addEventListener('keydown', (event) => {
-		if (buttons.includes(event.key as ValidInput)) {
-			update((n) => ({ ...n, [event.key]: true }));
-		}
-	});
+	if (typeof window !== 'undefined') {
+		window.addEventListener('keydown', (event) => {
+			if (buttons.includes(event.key as ValidInput)) {
+				update((n) => ({ ...n, [event.key]: true }));
+			}
+		});
 
-	window.addEventListener('keyup', (event) => {
-		if (buttons.includes(event.key as ValidInput)) {
-			update((n) => ({ ...n, [event.key]: false }));
-		}
-	});
+		window.addEventListener('keyup', (event) => {
+			if (buttons.includes(event.key as ValidInput)) {
+				update((n) => ({ ...n, [event.key]: false }));
+			}
+		});
+	}
 
 	return {
 		subscribe,

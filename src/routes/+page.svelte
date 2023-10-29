@@ -37,7 +37,6 @@
 		align-items: center;
 		height: 100dvh;
 		width: 100vw;
-		padding: 80px 0 30px 0;
 		position: relative;
 		transition: transform ease-in-out 20s;
 	}

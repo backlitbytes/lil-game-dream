@@ -9,6 +9,7 @@ body {
 	background-attachment: fixed;
 	touch-action: manipulation; /** prevent double tap zoom */
 	transition: background ease-in-out 1s;
+	-webkit-overflow-scrolling: touch;
 }
 
 div {

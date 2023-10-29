@@ -36,6 +36,7 @@
 		justify-content: center;
 		align-items: center;
 		height: 100dvh;
+		-webkit-overflow-scrolling: touch;
 		width: 100vw;
 		position: relative;
 		transition: transform ease-in-out 20s;

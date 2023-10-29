@@ -105,7 +105,7 @@ export function switchScene(newSceneKey: SceneName) {
 let square: Phaser.GameObjects.Rectangle;
 
 function controlSquare() {
-	const speed = controlsState.a ? SPEED * 2 : SPEED;
+	const speed = controlsState.b ? SPEED / 2 : controlsState.a ? SPEED * 2 : SPEED;
 
 	if (controlsState.ArrowLeft) {
 		square.x -= speed;

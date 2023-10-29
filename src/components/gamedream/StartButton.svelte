@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { type ValidInput, controlsStore } from '../../stores/controls';
-	import { registerInputDown } from '../../stores/global-inputs';
+	import { registerInputDown } from '../../stores/click-touch-input-handling';
 
 	export let control: ValidInput = 'None';
 </script>

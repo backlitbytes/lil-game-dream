@@ -1,6 +1,6 @@
 <script lang="ts">
 	import AllCarts from '../components/carts/AllCarts.svelte';
-	import { handleInputUp } from '../stores/global-inputs';
+	import { handleInputUp } from '../stores/click-touch-input-handling';
 	import { onMount } from 'svelte';
 	import { loadAudio } from '../audio/sounds';
 	import { winnerChickenDinner } from '../stores/winner';

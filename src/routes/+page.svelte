@@ -5,12 +5,23 @@
 	import { loadAudio } from '../audio/sounds';
 	import { winnerChickenDinner } from '../stores/winner';
 	import Gamedream from '../components/gamedream/Gamedream.svelte';
+	import { gamedreamStore, isOn } from '../stores/gamedream';
 
 	onMount(() => {
 		loadAudio();
 		window.addEventListener('mouseup', handleInputUp);
 		window.addEventListener('touchend', handleInputUp);
 	});
+
+	$: {
+		if (typeof window !== 'undefined') {
+			if ($isOn) {
+				document.body.style.background = `hsl(${$gamedreamStore.hue}deg ${$gamedreamStore.sat}% 75%)`;
+			} else {
+				document.body.style.background = `white`;
+			}
+		}
+	}
 </script>
 
 <div class="wrapper" class:winner={$winnerChickenDinner}>

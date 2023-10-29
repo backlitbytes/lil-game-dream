@@ -15,7 +15,7 @@
 		<div class="carts">
 			{#each $cartStore as cart, index}
 				{#if cart.unlocked}
-					<MoveableCart {cart} topPerc={0} leftPerc={index * 40} />
+					<MoveableCart {cart} topPerc={-40} leftPerc={index * 40} />
 				{/if}
 			{/each}
 		</div>

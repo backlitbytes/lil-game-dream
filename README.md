@@ -3,9 +3,7 @@ Can you find all the games that let you find all the games?
 Share Blocking:
 
 - buttons releasing isn't working right with multiple presses
-- punch it all up
-- sound effects (mostly of the game pad clicks)
-- metadata (turn back on server rendering??) (so sharing this looks nice)
+- font on share image is ugly
 
 Future things:
 

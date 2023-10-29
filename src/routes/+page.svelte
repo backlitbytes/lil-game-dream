@@ -24,7 +24,7 @@
 	}
 </script>
 
-<div class="wrapper" class:winner={$winnerChickenDinner}>
+<div class="wrapper disable-select" class:winner={$winnerChickenDinner}>
 	<AllCarts />
 	<Gamedream><div id="game-screen" /></Gamedream>
 </div>

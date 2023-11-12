@@ -1,3 +1,5 @@
+(any updates will come to the Svelte 5 version here: https://github.com/backlitbytes/Svelte5-lilgamedream)
+
 Can you find all the games that let you find all the games?
 
 Future things:
